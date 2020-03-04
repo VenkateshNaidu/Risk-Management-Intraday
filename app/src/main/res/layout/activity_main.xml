@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:text="Risk Management IntraDay"
+        android:padding="10dp">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:weightSum="2"
+        >
+
+        <EditText
+            android:id="@+id/edtStockPrice"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Stock price"
+            android:gravity="center"
+            android:inputType="numberDecimal"/>
+
+
+        <EditText
+            android:id="@+id/edtQty"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Enter Quantity"
+            android:gravity="center"
+            android:inputType="number"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/edtAmountwithMargin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Amount with Margin : "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:inputType="numberDecimal"
+        android:padding="10dp">
+
+    </TextView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/btnBUY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BUY">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btnSELL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SELL">
+
+            </Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textViewSL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:text=""
+            android:textColor="@color/colorAccent">
+
+        </TextView>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textViewTarget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:text=""
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/txtselection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text=""
+            android:gravity="end"
+            android:textColor="@color/colorPrimary"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

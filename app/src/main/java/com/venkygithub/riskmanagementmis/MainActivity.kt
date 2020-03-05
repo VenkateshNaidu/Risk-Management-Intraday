@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     var onepercent =19.5f
     var twopercent =19.5f
 
-    var amountwithMargin=1
+    var amountwithMargin=19.5f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
 
                 if( !edtQty.text.toString().isEmpty() && !edtStockPrice.text.toString().isEmpty()){
 
-                    edtAmountwithMargin.text ="Amount with Margin : "+ (Integer.parseInt(edtQty.text.toString()) *
-                            Integer.parseInt(edtStockPrice.text.toString())).toString()
+                    edtAmountwithMargin.text ="Amount with Margin : "+ (edtStockPrice.text.toString().toDouble()
+                            * Integer.parseInt(edtQty.text.toString())).toString()
 
                 }
             }
@@ -46,7 +46,8 @@ class MainActivity : AppCompatActivity() {
             if(validate()){
 
                 // calclation for Stop loss
-                amountwithMargin = Integer.parseInt(edtAmountwithMargin.text.toString().split(":")[1].trim())
+                amountwithMargin =
+                    edtAmountwithMargin.text.toString().split(":")[1].trim().toDouble().toFloat()
                 onepercent = (amountwithMargin / 100).toFloat()
                 Log.d("#onepercent(Buy)",onepercent.toString())
 
@@ -62,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 var target= amt1/Integer.parseInt(edtQty?.text.toString())
                 Log.d("#Target(Buy)",target?.toString())
 
-                textViewTarget.text = "Target     = ${target?.toString()} (2%)"
+                textViewTarget.text = "Target       = ${target?.toString()} (2%)"
 
                 txtselection.text = "BUY Side"
 
@@ -72,7 +73,8 @@ class MainActivity : AppCompatActivity() {
         btnSELL.setOnClickListener {
 
             if(validate()){
-                amountwithMargin = Integer.parseInt(edtAmountwithMargin.text.toString().split(":")[1].trim())
+                amountwithMargin =
+                    edtAmountwithMargin.text.toString().split(":")[1].trim().toDouble().toFloat()
                 onepercent = (amountwithMargin / 100).toFloat()
                 Log.d("#onepercent(Sell)",onepercent.toString())
                 var amt= amountwithMargin+onepercent
@@ -86,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                 var target= amt1/Integer.parseInt(edtQty?.text.toString())
                 Log.d("#Target(Sell)",target?.toString())
 
-                textViewTarget.text = "Target     = ${target?.toString()} (2%)"
+                textViewTarget.text = "Target       = ${target?.toString()} (2%)"
                 txtselection.text = "SELL Side"
             }
         }

@@ -1,10 +1,16 @@
 package com.venkygithub.riskmanagementmis
 
+import android.animation.ArgbEvaluator
+import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
+import android.view.animation.Animation
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        manageBlinkEffect()
 
 
 
@@ -94,6 +102,21 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    @SuppressLint("WrongConstant")
+    private fun manageBlinkEffect() {
+        textLabel.visibility = View.VISIBLE
+
+        val anim = ObjectAnimator.ofInt(
+            textLabel, "textColor", Color.BLUE, Color.RED,
+            Color.WHITE
+        )
+        anim.duration = 1500
+        anim.setEvaluator(ArgbEvaluator())
+        anim.repeatMode = Animation.REVERSE
+        anim.repeatCount = Animation.INFINITE
+        anim.start()
     }
 
     private fun validate(): Boolean{

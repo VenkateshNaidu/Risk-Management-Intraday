@@ -5,14 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#FFFFFF">
 
     <TextView
+        android:id="@+id/textLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="28sp"
         android:gravity="center"
+        android:visibility="gone"
         android:text="Risk Management IntraDay"
         android:padding="10dp">
 
@@ -74,7 +77,8 @@
                 android:id="@+id/btnBUY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BUY">
+                android:text="BUY"
+                android:background="#EF9A9A">
 
             </Button>
 
@@ -82,7 +86,8 @@
                 android:id="@+id/btnSELL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SELL">
+                android:text="SELL"
+                android:background="#CCFF90">
 
             </Button>
 
@@ -101,9 +106,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="28sp"
+            android:textSize="22sp"
+            android:gravity="center"
             android:text=""
-            android:textColor="@color/colorAccent">
+            android:textColor="#448AFF">
 
         </TextView>
 
@@ -113,9 +119,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="28sp"
+            android:textSize="22sp"
             android:text=""
-            android:textColor="@color/colorPrimary"/>
+            android:gravity="center"
+            android:textColor="#00C853"/>
 
         <TextView
             android:layout_marginTop="20dp"
@@ -126,7 +133,7 @@
             android:textSize="15sp"
             android:text=""
             android:gravity="end"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="#0091EA"/>
 
     </LinearLayout>
 
